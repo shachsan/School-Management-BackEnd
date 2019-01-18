@@ -1,0 +1,2 @@
+class LectureRoom < ApplicationRecord
+end
