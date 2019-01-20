@@ -1,4 +1,6 @@
 class LectureRoomSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name
+
+  has_many :lecture_schedules
 
 end
