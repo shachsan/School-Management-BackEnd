@@ -1,5 +1,5 @@
 class Api::V1::LectureSchedulesController < ApplicationController
-    before_action :find_schedule, only: :destroy
+    before_action :find_schedule, only: [:destroy, :update]
     def index
         @schedules=LectureSchedule.all 
         render json: @schedules
@@ -8,6 +8,10 @@ class Api::V1::LectureSchedulesController < ApplicationController
     def create
         @schedule=LectureSchedule.create!(schedule_params)
         render json: @schedule
+    end 
+
+    def update
+        @schedule.update(schedule_params)
     end 
 
     def destroy
