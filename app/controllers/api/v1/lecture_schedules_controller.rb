@@ -1,7 +1,7 @@
 class Api::V1::LectureSchedulesController < ApplicationController
     before_action :find_schedule, only: [:destroy, :update]
     def index
-        @schedules=LectureSchedule.all 
+        @schedules=LectureSchedule.all.order('date')
         render json: @schedules
     end
 
